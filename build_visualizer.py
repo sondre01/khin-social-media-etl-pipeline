@@ -14,6 +14,10 @@ html_template = f'''<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media ETL Pipeline | Visualizer & Architecture Platform</title>
   
+  <!-- High-Tech Data Engineering Favicon (Layers/Database in SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E">
+  <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E">
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -121,7 +125,7 @@ html_template = f'''<!DOCTYPE html>
             <span class="px-2 py-0.5 text-[11px] font-semibold tracking-wide uppercase rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">v2.0</span>
           </div>
           <div class="flex items-center space-x-2 text-xs text-gray-400">
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
             <span id="backend-status-pill" class="text-emerald-400 font-medium">Checking Backend...</span>
             <span class="text-gray-600">•</span>
             <span>PostgreSQL 18 Hybrid Engine</span>
