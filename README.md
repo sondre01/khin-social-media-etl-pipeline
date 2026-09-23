@@ -55,6 +55,8 @@ social-media-etl/
 │   └── cleaner.py          # Data validation, cleaning, and JSON flattening
 ├── load/
 │   └── db.py               # SQLAlchemy engine, connection logic, and table schemas
+├── index.html              # Interactive 1-page visualizer & analytics dashboard
+├── serve_dashboard.py      # Local web server & PostgreSQL live API bridge
 ├── .env                    # Local database credentials (ignored by git)
 ├── .gitignore              # Ignores .venv/, .env, __pycache__/, *.pyc
 ├── pipeline.py             # Orchestration script (E -> T -> L)
@@ -208,3 +210,40 @@ The pipeline will:
 1. **Extract**: Fetch posts from the configured social media API with error handling and rate-limiting.
 2. **Transform**: Parse timestamps, clean text, compute metrics, and structure the data.
 3. **Load**: Upsert records into PostgreSQL using SQLAlchemy (handling duplicates via `post_id`).
+
+---
+
+## Interactive 1-Page Web Visualizer & Dashboard
+
+An interactive, high-performance single-page web visualizer is included in [`index.html`](index.html).
+
+### Features:
+1. **Interactive ETL Flowchart**: Clickable stage nodes (`Extract`, `Transform`, `Load`, `Storage`) with source code inspection and step-by-step animated data routing.
+2. **6 Dynamic Graphical Visualizations**:
+   - **Post Engagement Distribution**: Multi-metric comparison of Reactions (likes) and Comments per post.
+   - **Top Content Creators**: Horizontal ranking of authors by engagement volume.
+   - **Length vs. Engagement**: Scatter plot correlating reading time (minutes) with audience reactions.
+   - **Topic & Tag Clusters**: Doughnut distribution of technologies extracted from the JSON payload.
+   - **Pipeline Latency Profile**: Time spent in Network Extract (65%) vs Pandas Transform (10%) vs PostgreSQL Upsert (25%).
+   - **Publication Velocity**: Chronological timeline of published articles.
+3. **Hybrid Model Deep-Dive**: Side-by-side architectural comparison of relational B-Tree indexed columns vs. PostgreSQL `JSONB` unflattened raw storage.
+4. **Live Pipeline Sandbox**: Execute simulations with different tags (`python`, `ai`, `webdev`, `javascript`) and watch live execution logs stream in a virtual console.
+5. **Database Records Table & Raw JSONB Inspector**: Search, sort, filter, export to CSV, and inspect the raw nested JSON payload stored in PostgreSQL.
+
+### How to Launch:
+
+#### Option 1: Live PostgreSQL Server Mode (Recommended)
+Runs a local server that connects live to your PostgreSQL database and allows triggering pipeline executions directly from the web UI:
+
+```powershell
+python serve_dashboard.py
+```
+Open **[http://localhost:8000](http://localhost:8000)** in your browser.
+
+#### Option 2: Standalone File Mode (Zero-setup)
+Double-click `index.html` or open it directly in any browser:
+```powershell
+Start-Process index.html
+```
+Operates immediately with embedded PostgreSQL snapshots and direct browser-based Dev.to API extraction!
+
