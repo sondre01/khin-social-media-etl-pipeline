@@ -137,6 +137,7 @@ html_template = f'''<!DOCTYPE html>
       <div class="hidden md:flex items-center space-x-2.5">
         <!-- Role Pills on Left Side of Nav Bar -->
         <div class="flex items-center space-x-1.5 bg-gray-900/80 p-1 rounded-xl border border-gray-800 text-xs">
+          <span class="text-white font-bold px-2">Khin Andrei:</span>
           <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium flex items-center space-x-1">
             <i data-lucide="code" class="w-3 h-3 text-blue-400"></i>
             <span>Software Developer</span>
@@ -193,15 +194,25 @@ html_template = f'''<!DOCTYPE html>
       
       <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <div class="max-w-3xl space-y-3">
-          <div class="flex flex-wrap items-center gap-2">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-semibold">
-              <i data-lucide="code" class="w-3.5 h-3.5 text-blue-400"></i>
+          <!-- Developer Profile Introduction -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-xl bg-gray-950/80 border border-blue-500/30 text-xs shadow-lg">
+            <span class="font-extrabold text-white tracking-wider uppercase text-[12px]">I'M KHIN ANDREI</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-300">ASPIRING</span>
+            <span class="px-2.5 py-0.5 rounded-lg bg-blue-500/15 text-blue-400 border border-blue-500/30 font-semibold flex items-center space-x-1">
+              <i data-lucide="code" class="w-3 h-3 text-blue-400"></i>
               <span>Software Developer</span>
-            </div>
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-semibold">
-              <i data-lucide="database" class="w-3.5 h-3.5 text-cyan-400"></i>
+            </span>
+            <span class="text-gray-500">&amp;</span>
+            <span class="px-2.5 py-0.5 rounded-lg bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 font-semibold flex items-center space-x-1">
+              <i data-lucide="database" class="w-3 h-3 text-cyan-400"></i>
               <span>Data Specialist</span>
-            </div>
+            </span>
+            <span class="text-gray-600">•</span>
+            <span class="text-emerald-400 font-medium flex items-center space-x-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>BASED IN THE PHILIPPINES</span>
+            </span>
           </div>
           <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
             End-to-End Social Media ETL Architecture & Analytics
@@ -798,6 +809,24 @@ html_template = f'''<!DOCTYPE html>
 
     </div>
   </section>
+
+  <!-- ================= FOOTER / PROFILE ================= -->
+  <footer class="max-w-7xl mx-auto px-4 lg:px-8 py-8 border-t border-gray-800/80 text-xs text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-extrabold text-sm shadow-md shadow-blue-500/20">
+        KA
+      </div>
+      <div>
+        <p class="font-bold text-white text-sm tracking-wide">KHIN ANDREI</p>
+        <p class="text-gray-400">Aspiring <span class="text-blue-400 font-semibold">Software Developer</span> &amp; <span class="text-cyan-400 font-semibold">Data Specialist</span> • Based in the Philippines</p>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span class="px-3 py-1 rounded-full bg-gray-900 border border-gray-800 text-gray-400 font-mono text-[11px]">
+        Social Media ETL Pipeline • Hybrid PostgreSQL + JSONB
+      </span>
+    </div>
+  </footer>
 
   <!-- ================= MODAL: JSONB PAYLOAD INSPECTOR ================= -->
   <div id="jsonb-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
